@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:myApp.properties"/>
+
+    <bean id="adminUser" class="org.chdtu.User">
+        <property name="username" value="admin"/>
+    </bean>
+
+    <bean id="firstDonationConfig" class="org.chdtu.DonationConfig">
+        <property name="name" value="базовий конфіг"/>
+        <property name="sumFrom" value="100"/>
+        <property name="textColor" value="#FFF"/>
+        <property name="user" ref="adminUser"/>
+    </bean>
+
+    <bean id="monoPayment" class="org.chdtu.PaymentMethod">
+        <property name="name" value="монобанка"/>
+        <property name="tax" value="0.0"/>
+    </bean>
+
+    <bean id="firstDonation" class="org.chdtu.Donation">
+        <property name="username" value="Kozak1337"/>
+        <property name="text" value="дякую за твій контент."/>
+        <property name="sum" value="101.5"/>
+        <property name="config" ref="firstDonationConfig"/>
+        <property name="paymentMethod" ref="monoPayment"/>
+    </bean>
+</beans>

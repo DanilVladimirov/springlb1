@@ -9,7 +9,6 @@ public class User {
     }
 
     public void setUsername(String username) {
-        System.out.println("Class Person: set Pet");
         this.username = username;
     }
 

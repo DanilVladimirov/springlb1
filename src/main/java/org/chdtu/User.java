@@ -2,6 +2,7 @@ package org.chdtu;
 
 public class User {
     private String username;
+    private UserSettings settings;
 
     public User() {
         System.out.println("User bean is created");
@@ -16,4 +17,11 @@ public class User {
         return this.username;
     }
 
+    public UserSettings getSettings() {
+        return settings;
+    }
+
+    public void setSettings(UserSettings settings) {
+        this.settings = settings;
+    }
 }

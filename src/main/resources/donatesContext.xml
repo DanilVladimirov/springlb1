@@ -9,8 +9,13 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:property-placeholder location="classpath:myApp.properties"/>
 
+    <bean id="settingsAdminUser" class="org.chdtu.UserSettings">
+        <property name="avatarUrl" value="https://example.com/img.png"/>
+    </bean>
+
     <bean id="adminUser" class="org.chdtu.User">
         <property name="username" value="admin"/>
+        <property name="settings" ref="settingsAdminUser"/>
     </bean>
 
     <bean id="firstDonationConfig" class="org.chdtu.DonationConfig">

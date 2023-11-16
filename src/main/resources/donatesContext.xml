@@ -25,8 +25,11 @@ http://www.springframework.org/schema/context/spring-context.xsd">
         <property name="user" ref="adminUser"/>
     </bean>
 
-    <bean id="monoPayment" class="org.chdtu.PaymentMethod">
-        <property name="name" value="монобанка"/>
+    <bean id="monoPayment" class="org.chdtu.MonobankPaymentMethod">
+        <property name="tax" value="0.0"/>
+    </bean>
+
+    <bean id="liqpayPayment" class="org.chdtu.LiqpayPaymentMethod">
         <property name="tax" value="0.0"/>
     </bean>
 
@@ -36,5 +39,13 @@ http://www.springframework.org/schema/context/spring-context.xsd">
         <property name="sum" value="101.5"/>
         <property name="config" ref="firstDonationConfig"/>
         <property name="paymentMethod" ref="monoPayment"/>
+    </bean>
+
+    <bean id="secondDonation" class="org.chdtu.Donation">
+        <property name="username" value="Kozak1337"/>
+        <property name="text" value="дякую за твій контент."/>
+        <property name="sum" value="101.5"/>
+        <property name="config" ref="firstDonationConfig"/>
+        <property name="paymentMethod" ref="liqpayPayment"/>
     </bean>
 </beans>

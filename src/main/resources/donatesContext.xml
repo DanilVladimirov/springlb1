@@ -42,9 +42,9 @@ http://www.springframework.org/schema/context/spring-context.xsd">
     </bean>
 
     <bean id="secondDonation" class="org.chdtu.Donation">
-        <property name="username" value="Kozak1337"/>
-        <property name="text" value="дякую за твій контент."/>
-        <property name="sum" value="101.5"/>
+        <property name="username" value="Taras Shevchenko"/>
+        <property name="text" value="дяка."/>
+        <property name="sum" value="111.5"/>
         <property name="config" ref="firstDonationConfig"/>
         <property name="paymentMethod" ref="liqpayPayment"/>
     </bean>

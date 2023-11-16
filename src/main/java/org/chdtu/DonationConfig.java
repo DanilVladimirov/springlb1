@@ -4,11 +4,15 @@ public class DonationConfig {
     private String name;
     private Float sumFrom;
     private String textColor;
+    private final User user;
 
-    private User user;
-
-    public DonationConfig() {
+    public DonationConfig(User user) {
+        this.user = user;
         System.out.println("DonationConfig bean is created");
+    }
+
+    public User getUser() {
+        return this.user;
     }
 
     public String getName() {
@@ -35,11 +39,4 @@ public class DonationConfig {
         this.textColor = textColor;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }

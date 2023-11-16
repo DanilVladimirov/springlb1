@@ -1,5 +1,6 @@
 package org.chdtu;
 
+
 public class LiqpayPaymentMethod implements PaymentMethod {
     private Float tax;
 

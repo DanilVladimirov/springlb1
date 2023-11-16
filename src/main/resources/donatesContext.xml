@@ -19,18 +19,19 @@ http://www.springframework.org/schema/context/spring-context.xsd">
     </bean>
 
     <bean id="firstDonationConfig" class="org.chdtu.DonationConfig">
+        <constructor-arg ref="adminUser"/>
+
         <property name="name" value="базовий конфіг"/>
         <property name="sumFrom" value="100"/>
         <property name="textColor" value="#FFF"/>
-        <property name="user" ref="adminUser"/>
     </bean>
 
     <bean id="monoPayment" class="org.chdtu.MonobankPaymentMethod">
-        <property name="tax" value="0.0"/>
+        <property name="tax" value="${monoPaymentMethod.tax}"/>
     </bean>
 
     <bean id="liqpayPayment" class="org.chdtu.LiqpayPaymentMethod">
-        <property name="tax" value="0.0"/>
+        <property name="tax" value="${liqpayPaymentMethod.tax}"/>
     </bean>
 
     <bean id="firstDonation" class="org.chdtu.Donation">
